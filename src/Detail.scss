@@ -1,0 +1,53 @@
+@import './_reset.scss';
+
+$maincolor : #ff0000;
+
+.wow-enter{
+    opacity: 0;
+}
+.wow-enter-active{
+    opacity: 1;
+    transition: all 500ms;
+}
+
+.red{
+    color : $maincolor;
+}
+
+@mixin func(){
+    background-color: #e0dfdf;
+    padding: 20 px;
+    border-radius: 5 px;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+}
+
+.my-alert{
+    @include func()
+}
+
+.my-alert2 {
+    @extend .my-alert;
+    background-color: #ffe592;
+}
+
+.my-alert p {
+    margin-bottom: 0;
+}
+
+/* div.container h4 {
+    color : blue;
+}
+div.container p {
+    color : green;
+} */
+
+/* div.container{
+    h4{ //nesting
+        color : blue;
+    }
+    p {
+        color : green;
+    }
+} */
