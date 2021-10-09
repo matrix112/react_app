@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/matrix112/react_app/static/css/main.a982aebb.chunk.css",
+    "main.js": "/matrix112/react_app/static/js/main.aba0da37.chunk.js",
+    "main.js.map": "/matrix112/react_app/static/js/main.aba0da37.chunk.js.map",
+    "runtime-main.js": "/matrix112/react_app/static/js/runtime-main.ef56a0ee.js",
+    "runtime-main.js.map": "/matrix112/react_app/static/js/runtime-main.ef56a0ee.js.map",
+    "static/js/2.e7b8f5da.chunk.js": "/matrix112/react_app/static/js/2.e7b8f5da.chunk.js",
+    "static/js/2.e7b8f5da.chunk.js.map": "/matrix112/react_app/static/js/2.e7b8f5da.chunk.js.map",
+    "static/js/3.cd35ce73.chunk.js": "/matrix112/react_app/static/js/3.cd35ce73.chunk.js",
+    "static/js/3.cd35ce73.chunk.js.map": "/matrix112/react_app/static/js/3.cd35ce73.chunk.js.map",
+    "static/js/4.22b67646.chunk.js": "/matrix112/react_app/static/js/4.22b67646.chunk.js",
+    "static/js/4.22b67646.chunk.js.map": "/matrix112/react_app/static/js/4.22b67646.chunk.js.map",
+    "index.html": "/matrix112/react_app/index.html",
+    "static/css/main.a982aebb.chunk.css.map": "/matrix112/react_app/static/css/main.a982aebb.chunk.css.map",
+    "static/js/2.e7b8f5da.chunk.js.LICENSE.txt": "/matrix112/react_app/static/js/2.e7b8f5da.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/matrix112/react_app/static/media/backgroud_shoe.4b3641e7.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ef56a0ee.js",
+    "static/js/2.e7b8f5da.chunk.js",
+    "static/css/main.a982aebb.chunk.css",
+    "static/js/main.aba0da37.chunk.js"
+  ]
+}
