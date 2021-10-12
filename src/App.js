@@ -133,12 +133,13 @@ function App() {
 function Card(props){
 
   let stock = useContext(stockContxt);
-  let dLink = "/detail/"+[props.i];
+  //let dLink = "/detail/"+[props.i];
+  let dLink = "/detail/"+[props.shoes.id];
 
   return(
     <div className="col-md-4">
       <Link to = {dLink}>
-        <img src={'https://codingapple1.github.io/shop/shoes'+ (props.i+1) +'.jpg'} width="100%"  
+        <img src={'https://codingapple1.github.io/shop/shoes'+ (props.shoes.id+1) +'.jpg'} width="100%"  
         onClick={()=>{ props.myidCgh(props.i) }}/>
       </Link>
       <h4>{ props.shoes.title }</h4>

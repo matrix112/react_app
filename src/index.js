@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { useReducer } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -12,25 +14,52 @@ import { combineReducers, createStore } from 'redux';
 let alertDefault = true;
 
 let defaultState =  [
-  { id:0, name:'modern shoes', quantity:2 }, 
-  { id:1, name:'modern shoes2', quantity:6 }
+  {id:null, name:'', quantity:null }
+  //{id:null, name:'', quantity:null }
+  /* { id:0, name:'modern shoes', quantity:2 }, 
+  { id:1, name:'modern shoes2', quantity:6 } */
 ];
 
 function reducer(state = defaultState, action){ //default parameter..
 
   if(action.type === 'addCart'){
-    let copyState = [...state];
-    copyState.push(action.payload);
-    return copyState
+    //console.log("action.payload.id : ", action.payload.id);
+    let foundId = state.findIndex( (a)=>{  return a.id === action.payload.id } );
+    console.log("foundId : ",foundId);
+
+    if(foundId >= 0){
+      let copyState = [...state];
+      copyState[foundId].quantity++;
+      return copyState
+    }else{
+      let copyState = [...state];
+      copyState.push(action.payload); //action.payload : added product
+      return copyState
+    }
+
   } else if( action.type === 'addQuantity'){
 
     let copyState = [...state];
-    copyState[0].quantity++;
-    return copyState
-  }else if( action.type === 'takeawayQuantity'){
+    copyState.map( (a,i)=>{
+      console.log("i : ",i,", copyState.map a.id : ",a.id,", action.data : ",action.data) ; 
+      if(a.id === action.data){ //action.data : product id
+        console.log("copyState.map a.id === action.data");   
+        copyState[i].quantity++; 
+      }
+    }) 
+    return copyState    
+
+  } else if( action.type === 'takeawayQuantity'){
 
     let copyState = [...state];
-    copyState[0].quantity === 0 ? (copyState[0].quantity=0):copyState[0].quantity--;
+    
+    copyState.map( (a,i)=>{
+      console.log("i : ",i,", copyState.map a.id : ",a.id,", action.data : ",action.data) ; 
+      if(a.id === action.data){ //action.data : product id
+        console.log("copyState.map a.id === action.data");   
+        copyState[i].quantity === 0 ? (copyState[i].quantity=0):copyState[i].quantity--; 
+      }
+    }) 
     return copyState
   }else{
     return state

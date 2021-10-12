@@ -104,23 +104,26 @@ function Detail(props){
         </div>
         <div className="col-md-6 mt-4">
           <h4 className="pt-5">{findPrct.title}</h4>
-          <p>{findPrct.content}</p>
-          <p>{findPrct.price}</p>
+          <p>content : {findPrct.content}</p>
+          <p>price : {findPrct.price}</p>          
+          <p>Product id : {findPrct.id}</p>
 
-          {/* <p>stock : {props.mystock[id]}</p> */}
+          {/* <p>stock : {props.mystock[id]}</p> */
+            console.log("findPrct.id : "+findPrct.id)
+          }
 
           <StockInfo mystock={props.mystock} id={id}></StockInfo>
 
           <button className="btn btn-danger" onClick={ ()=>{
             //Stock managing
-            console.log("id : "+id);
+            console.log("id : "+id,", findPrct.id : "+findPrct.id);
             var addMystock = [...props.mystock];
             console.log("addMystock : "+addMystock[id]);
             addMystock[id] = addMystock[id] - 1;
             props.stockChg(addMystock)
 
             //redux dispatch..
-            props.dispatch({type : 'addCart', payload : {id:2, name:findPrct.title, quantity:1} });
+            props.dispatch({type : 'addCart', payload : {id : findPrct.id, name : findPrct.title, quantity : 1} });
             history.push('/cart');
 
           } }>Order</button>

@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from "react";
 import {Table} from 'react-bootstrap'; // {Table} -- get Table variable or function, Table -- get 'Table' as exported..
 import { connect, useDispatch, useSelector } from "react-redux";
@@ -23,26 +25,29 @@ function Cart(props){
                   {
                     //props.state.map( (a,i)=>{ // for function myStateToProps
                     state.reducer.map( (a,i)=>{
-                      return(
-                        <tr key={i}>
-                          <td>{a.id}</td>
-                          <td>{ a.name }</td>
-                          <td>{ a.quantity }</td>
-                          <td><button onClick={()=>{
+                      if(a.id === null){ return null}
+                      else{
+                        return(                        
+                          <tr key={i}>
+                            <td>{a.id}</td>
+                            <td>{ a.name }</td>
+                            <td>{ a.quantity }</td>
+                            <td><button onClick={()=>{
+                                console.log("a.id : ",a.id);
+                                //props.dispatch({type:'addQuantity'}) // for function myStateToProps
+                                dispatch({type:'addQuantity', data : a.id })
 
-                              //props.dispatch({type:'addQuantity'}) // for function myStateToProps
-                              dispatch({type:'addQuantity'})
+                            }}>+</button>
+                            <button onClick={()=>{
 
-                          }}>+</button>
-                          <button onClick={()=>{
+                                //props.dispatch({type:'takeawayQuantity'}) // for function myStateToProps
+                                dispatch({type:'takeawayQuantity', data : a.id })
 
-                              //props.dispatch({type:'takeawayQuantity'}) // for function myStateToProps
-                              dispatch({type:'takeawayQuantity'})
-
-                          }}>-</button>
-                          </td>
-                        </tr>
-                      ) 
+                            }}>-</button>
+                            </td>
+                          </tr>
+                        )
+                      }
                     })
                   }
               </tbody>
